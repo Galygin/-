@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -608,9 +609,11 @@ namespace ib_lab
 
         private void encrypt_Click(object sender, EventArgs e)
         {
+            string [] temp = input_text.Lines;
             for (int i = 0; i < input_text.Lines.Length; i++)
-                input_text.Lines[i] = input_text.Lines[i].ToLower(); //все в нижний регистр, чтоб не вылетало
-            enc ENC = new enc(ab.Text.ToLower(), key.Text.ToLower(), input_text.Lines);
+                temp[i] = temp[i].ToLower(); //все в нижний регистр, чтоб не вылетало
+           // input_text.Lines[0] = "CJC";
+            enc ENC = new enc(ab.Text.ToLower(), key.Text.ToLower(), temp);
             if (input_text.Text != "" && ab.Text != "" && key.Text != "")
                 switch (method.SelectedIndex)
                 {
