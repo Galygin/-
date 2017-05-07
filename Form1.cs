@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -50,14 +51,12 @@ namespace ib_lab
                 {
                     // for (int id = 0; id < ab.Length; id++)
                     {
-                        k = ab.IndexOf(key[i]); //           if (key[i] == ab[id]) k = id;
-                        x = ab.IndexOf(str_input_text[i]); // if (str_input_text[i] == ab[id]) x = id;
-                        if (x - k > 0)
-                            z = (x - k) % ab.Length;
-                        else
-                            z = (ab.Length + x - k) % ab.Length;
+                        k = key[i] - 48;
+                        x = str_input_text[i] - 48;
+                        if (-1 == (x - k)) z = 1;
+                        else z = x - k;
+                        res += z;
                     }
-                    res += ab[z];
                 }
                 output[0] = res;
                 return output;
@@ -310,6 +309,15 @@ namespace ib_lab
 
             public string[] XOR()
             {
+                System.Int32 a;
+                if (!Int32.TryParse(key, out a) || !Int32.TryParse(input_text[0], out a))
+                {
+                    MessageBox.Show("Для правильной работы этого алгоритма ключ и текст должны быть числовым значением",
+                        "Ошибка", MessageBoxButtons.OK);
+                    string[] answer = new string[1];
+                    answer[0] = "";
+                    return answer;
+                }
                 string[] output = new string[input_text.Length];
                 int k = 0, x = 0, z = 0;
                 string res;
@@ -335,10 +343,11 @@ namespace ib_lab
                         if (str_input_text[i] == ab[id]) x = id;
                         z = (x + k) % ab.Length;
                     }*/
-                    k = ab.IndexOf(key[i]);
-                    x = ab.IndexOf(str_input_text[i]);
-                    z = (x + k) % ab.Length;
-                    res += ab[z];
+                    k = key[i] - 48;
+                    x = str_input_text[i] - 48;
+                    if (2 == (x + k)) z = 0;
+                        else z = x + k;
+                    res += z;
                 }
                 output[0] = res;
                 return output;

@@ -117,9 +117,9 @@
             // 
             // encrypt
             // 
-            this.encrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.encrypt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.encrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.encrypt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.encrypt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.encrypt.Location = new System.Drawing.Point(888, 35);
             this.encrypt.Name = "encrypt";
             this.encrypt.Size = new System.Drawing.Size(147, 100);
@@ -130,9 +130,9 @@
             // 
             // decrypt
             // 
-            this.decrypt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.decrypt.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.decrypt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.decrypt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.decrypt.ForeColor = System.Drawing.Color.DimGray;
             this.decrypt.Location = new System.Drawing.Point(888, 141);
             this.decrypt.Name = "decrypt";
             this.decrypt.Size = new System.Drawing.Size(147, 100);
